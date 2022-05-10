@@ -1,6 +1,11 @@
 # EpamStringsTask3
 
-Ссылка для скачивания: [Practice (tasks).pdf](https://github.com/AkylichAndrei/EpamStringsTask3/files/8654053/Practice.tasks.pdf)
+Практика: [Practice (tasks).pdf](https://github.com/AkylichAndrei/EpamStringsTask3/files/8654053/Practice.tasks.pdf)
+
+Рекомендации: [Recommendations.pdf](https://github.com/AkylichAndrei/EpamStringsTask3/files/8662551/Recommendations.pdf)
+
+Теория: [Questions.pdf](https://github.com/AkylichAndrei/EpamStringsTask3/files/8662546/Questions.pdf)
+
 
 **Работа со строкой как с массивом символов**
 
