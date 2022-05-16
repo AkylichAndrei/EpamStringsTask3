@@ -8,26 +8,26 @@ public class TaskFive {
 	char[] chArray;
 	int j;
 	void convert(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			for( j = 0; j < chArray.length - 1 ; j++){
-			        //находим слово word
+			        //РЅР°С…РѕРґРёРј СЃР»РѕРІРѕ word
 				if(chArray[j] == ' ' && chArray[j + 1] == ' ' ){
-					//сдвигаем массив 
+					//СЃРґРІРёРіР°РµРј РјР°СЃСЃРёРІ 
 					shift();
-					//уменьшаем длинну массива
+					//СѓРјРµРЅСЊС€Р°РµРј РґР»РёРЅРЅСѓ РјР°СЃСЃРёРІР°
 					chArray = Arrays.copyOf(chArray,chArray.length - 1);
 					j--;
 			        }	
 			}
 			j=chArray.length - 1;
 			while(chArray[j]==' ') {
-				//уменьшаем длинну массива
+				//СѓРјРµРЅСЊС€Р°РµРј РґР»РёРЅРЅСѓ РјР°СЃСЃРёРІР°
 				chArray = Arrays.copyOf(chArray,chArray.length - 1);
 				j--;
 			}
-			//запихиваем в строку
+			//Р·Р°РїРёС…РёРІР°РµРј РІ СЃС‚СЂРѕРєСѓ
 			str = String.valueOf(chArray);
 	}
 	void shift() {
@@ -36,13 +36,13 @@ public class TaskFive {
 		}
 	}
 	void outputNewStr() {
-		System.out.println("Обнавлённая трока:" + str);
+		System.out.println("РћР±РЅР°РІР»С‘РЅРЅР°СЏ С‚СЂРѕРєР°:" + str);
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub 
 		TaskFive myTaskFive = new TaskFive();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку : ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ : ");
 		myTaskFive.str = in.nextLine ();
 		in.close();
 		myTaskFive.convert();

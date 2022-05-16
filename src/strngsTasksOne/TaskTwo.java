@@ -1,4 +1,5 @@
 package strngsTasksOne;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,14 +8,20 @@ public class TaskTwo {
 	char[] chArray;
 	int j;
 	void convert(){
-			 chArray = str.toCharArray();//преобразовываем строку в массив
-			for( j = 0; j < chArray.length ; j++){//перебираем все элементы массива
-				if(chArray[j] == 'w' && chArray[j + 1] == 'o' && chArray[j + 2] == 'r'  //находим слово word
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
+			 chArray = str.toCharArray();
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
+			for( j = 0; j < chArray.length ; j++){
+			        //РЅР°С…РѕРґРёРј СЃР»РѕРІРѕ word
+				if(chArray[j] == 'w' && chArray[j + 1] == 'o' && chArray[j + 2] == 'r'
 						&& chArray[j + 3] == 'd' ){
-					chArray = Arrays.copyOf(chArray,chArray.length + 2); //увеличиваем длинну массива
-					shift();//сдвигаем массив (на два увеличили, два раза сдвинули)
+					//СѓРІРµР»РёС‡РёРІР°РµРј РґР»РёРЅРЅСѓ РјР°СЃСЃРёРІР°
+					chArray = Arrays.copyOf(chArray,chArray.length + 2); 
+					//СЃРґРІРёРіР°РµРј РјР°СЃСЃРёРІ (РЅР° РґРІР° СѓРІРµР»РёС‡РёР»Рё, РґРІР° СЂР°Р·Р° СЃРґРІРёРЅСѓР»Рё)
 					shift();
-					chArray[j]='l';//меняем на 'letter'
+					shift();
+					//РјРµРЅСЏРµРј РЅР° 'letter'
+					chArray[j]='l';
 					chArray[j + 1]='e';
 					chArray[j + 2]='t';
 					chArray[j + 3]='t';
@@ -22,7 +29,8 @@ public class TaskTwo {
 					chArray[j + 5]='r';
 			        }	
 			}
-			str = String.valueOf(chArray);//запихиваем в строку
+			//Р·Р°РїРёС…РёРІР°РµРј РІ СЃС‚СЂРѕРєСѓ
+			str = String.valueOf(chArray);
 	}
 	void shift() {
 		for(int j2 = chArray.length - 1; j2 >= j  ; j2--) {
@@ -30,12 +38,12 @@ public class TaskTwo {
 		}
 	}
 	void outputNewStr() {
-		System.out.println("Обнавлённая трока:" + str);
+		System.out.println("РћР±РЅР°РІР»С‘РЅРЅР°СЏ С‚СЂРѕРєР°:" + str);
 	}
 	public static void main(String[] args) {
 		TaskTwo myTaskTwo = new TaskTwo();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку для преобазоования: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ РґР»СЏ РїСЂРµРѕР±Р°Р·РѕРѕРІР°РЅРёСЏ: ");
 		myTaskTwo.str = in.nextLine ();
 		in.close();
 		myTaskTwo.convert();

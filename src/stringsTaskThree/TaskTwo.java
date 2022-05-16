@@ -2,11 +2,12 @@ package stringsTaskThree;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-// Напишите анализатор, позволяющий последовательно возвращать содержимое узлов xml-документа и его тип 
-//1.открывающий тег,
-//2.закрывающий тег,
-//3.содержимое тега, 
-// примечание: Пользоваться готовыми парсерами XML для решения данной задачи нельзя.
+// РќР°РїРёС€РёС‚Рµ Р°РЅР°Р»РёР·Р°С‚РѕСЂ, РїРѕР·РІРѕР»СЏСЋС‰РёР№ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕ РІРѕР·РІСЂР°С‰Р°С‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ СѓР·Р»РѕРІ xml-РґРѕРєСѓРјРµРЅС‚Р° 
+// Рё РµРіРѕ С‚РёРї 
+//1.РѕС‚РєСЂС‹РІР°СЋС‰РёР№ С‚РµРі,
+//2.Р·Р°РєСЂС‹РІР°СЋС‰РёР№ С‚РµРі,
+//3.СЃРѕРґРµСЂР¶РёРјРѕРµ С‚РµРіР°, 
+// РїСЂРёРјРµС‡Р°РЅРёРµ: РџРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РіРѕС‚РѕРІС‹РјРё РїР°СЂСЃРµСЂР°РјРё XML РґР»СЏ СЂРµС€РµРЅРёСЏ РґР°РЅРЅРѕР№ Р·Р°РґР°С‡Рё РЅРµР»СЊР·СЏ.
 public class TaskTwo {
 	String str,str2,finishStr;
 	char[] chArray;
@@ -17,20 +18,20 @@ public class TaskTwo {
 	String[] fields;
 	String text = "<notes>"
 			+ " <note id = \"1\"> "
-			+ "<to>Вася</to> "
-			+ "<from>Света</from> "
-			+ "<heading>Напоминание</heading>"
-			+ " <body>Позвони мне завтра!</body>"
+			+ "<to>Р’Р°СЃСЏ</to> "
+			+ "<from>РЎРІРµС‚Р°</from> "
+			+ "<heading>РќР°РїРѕРјРёРЅР°РЅРёРµ</heading>"
+			+ " <body>РџРѕР·РІРѕРЅРё РјРЅРµ Р·Р°РІС‚СЂР°!</body>"
 			+ " </note> "
 			+ "<note id = \"2\"> "
-			+ "<to>Петя</to> "
-			+ "<from>Маша</from>"
-			+ " <heading>Важное напоминание</heading>"
+			+ "<to>РџРµС‚СЏ</to> "
+			+ "<from>РњР°С€Р°</from>"
+			+ " <heading>Р’Р°Р¶РЅРѕРµ РЅР°РїРѕРјРёРЅР°РЅРёРµ</heading>"
 			+ " </body> </note>"
 			+ " </notes>";
 	
 	void find(){
-		strToArray = text.toCharArray(); // Преобразуем строку text в массив символов (char)
+		strToArray = text.toCharArray(); // РџСЂРµРѕР±СЂР°Р·СѓРµРј СЃС‚СЂРѕРєСѓ text РІ РјР°СЃСЃРёРІ СЃРёРјРІРѕР»РѕРІ (char)
 		i2=0;
 		 Pattern pattern = Pattern.compile("<\\w.+?>");
 		    Matcher matcher = pattern.matcher(text);
@@ -39,16 +40,16 @@ public class TaskTwo {
 		        end = matcher.end();
 		    	i2++; j=0;
 		    	System.out.println("");
-		    	 System.out.println("Найден узел № " + i2 + ".\r\n" + 
-		    	 		"Открывающий тег:" + 
+		    	 System.out.println("РќР°Р№РґРµРЅ СѓР·РµР» в„– " + i2 + ".\r\n" + 
+		    	 		"РћС‚РєСЂС‹РІР°СЋС‰РёР№ С‚РµРі:" + 
 		    	 		"");
-		    	//поиск открывающего тега
+		    	//РїРѕРёСЃРє РѕС‚РєСЂС‹РІР°СЋС‰РµРіРѕ С‚РµРіР°
 		    	 strTemp=text.substring(matcher.start(), matcher.end());
 		        System.out.println(strTemp);
 		        
-		        //поиск закрывающего тега
+		        //РїРѕРёСЃРє Р·Р°РєСЂС‹РІР°СЋС‰РµРіРѕ С‚РµРіР°
 		        strToArray = strTemp.toCharArray();
-		        System.out.println( "Закрывающий тег:" );
+		        System.out.println( "Р—Р°РєСЂС‹РІР°СЋС‰РёР№ С‚РµРі:" );
 		        System.out.print("</");
 		        i=1; 
 		        do {
@@ -62,10 +63,10 @@ public class TaskTwo {
 		        System.out.println(">");
 		        i=0;
 		        
-		        //начинаем поиск из нужного нам места
+		        //РЅР°С‡РёРЅР°РµРј РїРѕРёСЃРє РёР· РЅСѓР¶РЅРѕРіРѕ РЅР°Рј РјРµСЃС‚Р°
 		        textSubString = text.substring(matcher.start(), text.length());
-		        //поиск содержимого тега
-		        System.out.println( "Поиск содержимого : " + strTemp2 );
+		        //РїРѕРёСЃРє СЃРѕРґРµСЂР¶РёРјРѕРіРѕ С‚РµРіР°
+		        System.out.println( "РЎРѕРґРµСЂР¶РёРјРѕРµ С‚РµРіР° " + strTemp2 + " : " );
 		        Pattern p = Pattern.compile("(<"+strTemp2+").+?(/"+strTemp2+">)");  
 		        Matcher m = p.matcher(textSubString);  
 		        if(m.find()){  
@@ -74,7 +75,6 @@ public class TaskTwo {
 		    }		    
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		TaskTwo myTaskTwo = new TaskTwo();
 		myTaskTwo.find();
 	}

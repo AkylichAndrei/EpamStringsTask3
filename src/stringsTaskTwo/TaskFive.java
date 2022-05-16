@@ -1,5 +1,4 @@
 package stringsTaskTwo;
-
 import java.util.Scanner;
 
 public class TaskFive {
@@ -7,27 +6,24 @@ public class TaskFive {
 	char[] chArray;
 	int j,counter;
 	void search(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			 for( j = 0; j < chArray.length  ; j++) {
-				if(chArray[j]=='a'||chArray[j]=='а')
+				if(chArray[j]=='a'||chArray[j]=='Р°')
 					counter++;
 			}
 	}
-	
 	void outputNewStr() {
-		System.out.println("Символ а встречается : " + counter + " раза ");
+		System.out.println("РЎРёРјРІРѕР» Р° РІСЃС‚СЂРµС‡Р°РµС‚СЃСЏ : " + counter + " СЂР°Р·Р° ");
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		TaskFive myTaskFive = new TaskFive();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ: ");
 		myTaskFive.str = in.nextLine ();
 		in.close();
 		myTaskFive.search();
 		myTaskFive.outputNewStr();
 	}
-
 }

@@ -1,5 +1,4 @@
 package stringsTaskTwo;
-
 import java.util.Scanner;
 
 public class TaskFour {
@@ -8,31 +7,31 @@ public class TaskFour {
 	String[] chArray2  = new String[3];
 	int j,counter;
 	void convert(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 		     finishStr="";
 		     counter++;
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			 for( j = 0; j < chArray.length - 1  ; j++) {
 				past();
 			}
 	}
 	void past() {
-		if( (chArray[ j ] == 'т' && counter==1)||(chArray[ j ] == 'т' && counter==4))
+		if( (chArray[ j ] == 'С‚' && counter==1)||(chArray[ j ] == 'С‚' && counter==4))
 		{
 			str2 = String.valueOf(chArray[ j ]);
 			finishStr = finishStr+str2;
 			 counter++;
 			 j = 0;
 		}
-		if( chArray[ j ] == 'о' && counter==2)
+		if( chArray[ j ] == 'Рѕ' && counter==2)
 		{
 			str2 = String.valueOf(chArray[ j ]);
 			finishStr = finishStr+str2;
 			 counter++;
 			 j = 0;
 		}
-		if( chArray[ j ] == 'р' && counter==3)
+		if( chArray[ j ] == 'СЂ' && counter==3)
 		{
 			str2 = String.valueOf(chArray[ j ]);
 			finishStr = finishStr+str2;
@@ -41,17 +40,15 @@ public class TaskFour {
 		}
 	}
 	void outputNewStr() {
-		System.out.println("Вот что получилось :" + finishStr);
+		System.out.println("Р’РѕС‚ С‡С‚Рѕ РїРѕР»СѓС‡РёР»РѕСЃСЊ :" + finishStr);
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		TaskFour myTaskFour = new TaskFour();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ: ");
 		myTaskFour.str = in.nextLine ();
 		in.close();
 		myTaskFour.convert();
 		myTaskFour.outputNewStr();
 	}
-
 }

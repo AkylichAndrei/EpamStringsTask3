@@ -7,11 +7,11 @@ public class TaskNine {
 	char[] chArray;
 	int j,i,smallLetters,capitalLetters;
 	void search(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			for( j = 0; j < chArray.length ; j++){
-			        //находим одинаковый элемент
+			        //РЅР°С…РѕРґРёРј РѕРґРёРЅР°РєРѕРІС‹Р№ СЌР»РµРјРµРЅС‚
 				if(((chArray[j] >= 'a')&&(chArray[j] <= 'z'))  ) {
 					smallLetters++;
 			}
@@ -19,18 +19,18 @@ public class TaskNine {
 					capitalLetters++;
 				}
 			}
-			//запихиваем в строку
+			//Р·Р°РїРёС…РёРІР°РµРј РІ СЃС‚СЂРѕРєСѓ
 			str = String.valueOf(chArray);
 	}
 	void outputNewStr() {
-		System.out.println("Маленьких букв : " + smallLetters + " || Больших букв : " + capitalLetters);
+		System.out.println("РњР°Р»РµРЅСЊРєРёС… Р±СѓРєРІ : " + smallLetters + " || Р‘РѕР»СЊС€РёС… Р±СѓРєРІ : " + capitalLetters);
 	}
 	public static void main(String[] args) {
-		//Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке.
-		// Учитывать только английские буквы.
+		//РџРѕСЃС‡РёС‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕС‡РЅС‹С… (РјР°Р»РµРЅСЊРєРёС…) Рё РїСЂРѕРїРёСЃРЅС‹С… (Р±РѕР»СЊС€РёС…) Р±СѓРєРІ РІ РІРІРµРґРµРЅРЅРѕР№ СЃС‚СЂРѕРєРµ.
+		// РЈС‡РёС‚С‹РІР°С‚СЊ С‚РѕР»СЊРєРѕ Р°РЅРіР»РёР№СЃРєРёРµ Р±СѓРєРІС‹.
 		TaskNine myTaskNine = new TaskNine();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку для поиска: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ РґР»СЏ РїРѕРёСЃРєР°: ");
 		myTaskNine.str = in.nextLine ();
 		in.close();
 		myTaskNine.search();

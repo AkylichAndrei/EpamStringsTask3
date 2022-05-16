@@ -1,29 +1,27 @@
 package stringsTaskTwo;
-
 import java.util.Arrays;
 import java.util.Scanner;
-
 
 public class TaskTwo {
 	String str;
 	char[] chArray;
 	int j;
 	void convert(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			for( j = 0; j < chArray.length ; j++){
-			        //находим букву a
+			        //РЅР°С…РѕРґРёРј Р±СѓРєРІСѓ a
 				if(chArray[j] == 'a' ){
-					//увеличиваем длинну массива
+					//СѓРІРµР»РёС‡РёРІР°РµРј РґР»РёРЅРЅСѓ РјР°СЃСЃРёРІР°
 					chArray = Arrays.copyOf(chArray,chArray.length + 1); 
-					//сдвигаем массив 
+					//СЃРґРІРёРіР°РµРј РјР°СЃСЃРёРІ 
 					shift();
-					//меняем 
+					//РјРµРЅСЏРµРј 
 					chArray[j + 1]='b';
 			        }	
 			}
-			//запихиваем в строку
+			//Р·Р°РїРёС…РёРІР°РµРј РІ СЃС‚СЂРѕРєСѓ
 			str = String.valueOf(chArray);
 	}
 	void shift() {
@@ -32,17 +30,16 @@ public class TaskTwo {
 		}
 	}
 	void outputNewStr() {
-		System.out.println("Обнавлённая строка:" + str);
+		System.out.println("РћР±РЅР°РІР»С‘РЅРЅР°СЏ СЃС‚СЂРѕРєР°:" + str);
 	}
 	public static void main(String[] args) {
-		// 2. В строке вставить после каждого символа 'a' символ 'b'.
+		// 2. Р’ СЃС‚СЂРѕРєРµ РІСЃС‚Р°РІРёС‚СЊ РїРѕСЃР»Рµ РєР°Р¶РґРѕРіРѕ СЃРёРјРІРѕР»Р° 'a' СЃРёРјРІРѕР» 'b'.
 		TaskTwo myTaskTwo = new TaskTwo();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку для преобазоования: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ РґР»СЏ РїСЂРµРѕР±Р°Р·РѕРѕРІР°РЅРёСЏ: ");
 		myTaskTwo.str = in.nextLine ();
 		in.close();
 		myTaskTwo.convert();
 		myTaskTwo.outputNewStr();
 	}
-
 }

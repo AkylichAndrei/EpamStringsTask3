@@ -1,7 +1,5 @@
 package stringsTaskTwo;
-
 import java.util.Scanner;
-
 
 public class TaskOne {
 	String str;
@@ -10,13 +8,13 @@ public class TaskOne {
 	char[] chArray3;
 	int j,counter,counterFinish;
 	void search(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			for( j = 0; j < chArray.length - 1  ; j++){
-			        //находим пробел
+			        //РЅР°С…РѕРґРёРј РїСЂРѕР±РµР»
 				if(chArray[j] == ' '){
-					//Считываем наибольшее количество пробелов
+					//РЎС‡РёС‚С‹РІР°РµРј РЅР°РёР±РѕР»СЊС€РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕР±РµР»РѕРІ
 					counter();    
 			}
 			if(counter>counterFinish)
@@ -31,17 +29,15 @@ public class TaskOne {
 		 }
 	}
 	void outputNewStr() {
-		System.out.println("Наибольшее количество подряд идущих пробелов:" + counterFinish);
+		System.out.println("РќР°РёР±РѕР»СЊС€РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїРѕРґСЂСЏРґ РёРґСѓС‰РёС… РїСЂРѕР±РµР»РѕРІ:" + counterFinish);
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		TaskOne myTaskOne = new TaskOne();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку : ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ : ");
 		myTaskOne.str = in.nextLine ();
 		in.close();
 		myTaskOne.search();
 		myTaskOne.outputNewStr();
 	}
-
 }

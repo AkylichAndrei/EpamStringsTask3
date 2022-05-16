@@ -7,13 +7,13 @@ public class TaskFour {
 	char[] chArray;
 	int j,counter;
 	void search(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			for( j = 0; j < chArray.length ; j++){
-			        //находим цифры
+			        //РЅР°С…РѕРґРёРј С†РёС„СЂС‹
 				if(Character.isDigit(chArray[j])==true  ){
-					//чётчик
+					//С‡С‘С‚С‡РёРє
 					counter++;
 					while(Character.isDigit(chArray[j])==true && j < chArray.length - 1) 
 						j++;
@@ -22,13 +22,12 @@ public class TaskFour {
 	}
 	
 	void output() {
-		System.out.println("количество чисел в строке:" + counter);
+		System.out.println("РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РёСЃРµР» РІ СЃС‚СЂРѕРєРµ:" + counter);
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		TaskFour myTaskFour = new TaskFour();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ: ");
 		myTaskFour.str = in.nextLine ();
 		in.close();
 		myTaskFour.search();

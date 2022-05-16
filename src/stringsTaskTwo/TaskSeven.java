@@ -8,21 +8,21 @@ public class TaskSeven {
 	char[] chArray;
 	int j,i;
 	void convert(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			for( j = 0; j < chArray.length ; j++)
 				for( i = j + 1; i < chArray.length ; i++){
-			        //находим одинаковый элемент
+			        //РЅР°С…РѕРґРёРј РѕРґРёРЅР°РєРѕРІС‹Р№ СЌР»РµРјРµРЅС‚
 				if(chArray[i] == chArray[j] ){
-					//сдвигаем массив 
+					//СЃРґРІРёРіР°РµРј РјР°СЃСЃРёРІ 
 					shift();
-					//уменьшаем длинну массива
+					//СѓРјРµРЅСЊС€Р°РµРј РґР»РёРЅРЅСѓ РјР°СЃСЃРёРІР°
 					chArray = Arrays.copyOf(chArray,chArray.length - 1);
 					i--;
 			        }	
 			}
-			//запихиваем в строку
+			//Р·Р°РїРёС…РёРІР°РµРј РІ СЃС‚СЂРѕРєСѓ
 			str = String.valueOf(chArray);
 	}
 	void shift() {
@@ -30,20 +30,18 @@ public class TaskSeven {
 			chArray[ j2 ] =  chArray[j2 + 1];
 		}
 	}
-	
 	void outputNewStr() {
-		System.out.println("Обнавлённая строка:" + str);
+		System.out.println("РћР±РЅР°РІР»С‘РЅРЅР°СЏ СЃС‚СЂРѕРєР°:" + str);
 	}
 	public static void main(String[] args) {
-		// 7. Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. 
-		// Например, если было введено "abc cde def", то должно быть выведено "abcdef".
+		// 7. Р’РІРѕРґРёС‚СЃСЏ СЃС‚СЂРѕРєР°. РўСЂРµР±СѓРµС‚СЃСЏ СѓРґР°Р»РёС‚СЊ РёР· РЅРµРµ РїРѕРІС‚РѕСЂСЏСЋС‰РёРµСЃСЏ СЃРёРјРІРѕР»С‹ Рё РІСЃРµ РїСЂРѕР±РµР»С‹. 
+		// РќР°РїСЂРёРјРµСЂ, РµСЃР»Рё Р±С‹Р»Рѕ РІРІРµРґРµРЅРѕ "abc cde def", С‚Рѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РІС‹РІРµРґРµРЅРѕ "abcdef".
 				TaskSeven myTaskSeven = new TaskSeven();
 				Scanner in = new Scanner(System.in);
-				System.out.println("Введите строку для преобазоования: ");
+				System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ РґР»СЏ РїСЂРµРѕР±Р°Р·РѕРѕРІР°РЅРёСЏ: ");
 				myTaskSeven.str = in.nextLine ();
 				in.close();
 				myTaskSeven.convert();
 				myTaskSeven.outputNewStr();
 	}
-
 }

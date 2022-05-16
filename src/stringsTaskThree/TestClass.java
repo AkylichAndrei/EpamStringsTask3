@@ -5,22 +5,21 @@ import java.util.regex.Pattern;
 public class TestClass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// Строка для сканирования, чтобы найти шаблон
-	      String str = "Крещение Руси произошло в 988 году! Не так ли?";
+		// РЎС‚СЂРѕРєР° РґР»СЏ СЃРєР°РЅРёСЂРѕРІР°РЅРёСЏ, С‡С‚РѕР±С‹ РЅР°Р№С‚Рё С€Р°Р±Р»РѕРЅ
+	      String str = "РљСЂРµС‰РµРЅРёРµ Р СѓСЃРё РїСЂРѕРёР·РѕС€Р»Рѕ РІ 988 РіРѕРґСѓ! РќРµ С‚Р°Рє Р»Рё?";
 	      String pattern = "(.*)(\\d+)(.*)";
 
-	      // Создание Pattern объекта
+	      // РЎРѕР·РґР°РЅРёРµ Pattern РѕР±СЉРµРєС‚Р°
 	      Pattern r = Pattern.compile(pattern);
 
-	      // Создание matcher объекта
+	      // РЎРѕР·РґР°РЅРёРµ matcher РѕР±СЉРµРєС‚Р°
 	      Matcher m = r.matcher(str);
 	      if (m.find( )) {
-	         System.out.println("Найдено значение: " + m.group(0));
-	         System.out.println("Найдено значение: " + m.group(1));
-	         System.out.println("Найдено значение: " + m.group(2));
+	         System.out.println("РќР°Р№РґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ: " + m.group(0));
+	         System.out.println("РќР°Р№РґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ: " + m.group(1));
+	         System.out.println("РќР°Р№РґРµРЅРѕ Р·РЅР°С‡РµРЅРёРµ: " + m.group(2));
 	      }else {
-	         System.out.println("НЕ СОВПАДАЕТ");
+	         System.out.println("РќР• РЎРћР’РџРђР”РђР•Рў");
 	      }
 	}
 

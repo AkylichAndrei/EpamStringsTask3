@@ -1,5 +1,4 @@
 package stringsTaskTwo;
-
 import java.util.Scanner;
 
 public class TaskThree {
@@ -8,11 +7,11 @@ public class TaskThree {
 	int j;
 	boolean flag;
 	void convert(){
-			//преобразовываем строку в массив
+			//РїСЂРµРѕР±СЂР°Р·РѕРІС‹РІР°РµРј СЃС‚СЂРѕРєСѓ РІ РјР°СЃСЃРёРІ
 			 chArray = str.toCharArray();
-			 answer=" да! ";
+			 answer=" РґР°! ";
 			 j=0;
-			//перебираем все элементы массива
+			//РїРµСЂРµР±РёСЂР°РµРј РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°
 			while(j <= ((chArray.length - 1) /2)&&flag!=true) {
 				check();
 				j++;
@@ -22,23 +21,19 @@ public class TaskThree {
 		if(chArray[ j ] !=  chArray[chArray.length - j - 1 ])
 		{
 			flag=true;
-			answer=" нет! ";
-			
+			answer=" РЅРµС‚! ";
 		}
-		
 	}
 	void outputNewStr() {
-		System.out.println("Является ли введённое слово полиндромом? :" + answer);
+		System.out.println("РЇРІР»СЏРµС‚СЃСЏ Р»Рё РІРІРµРґС‘РЅРЅРѕРµ СЃР»РѕРІРѕ РїРѕР»РёРЅРґСЂРѕРјРѕРј? :" + answer);
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		TaskThree myTaskThree = new TaskThree();
 		Scanner in = new Scanner(System.in);
-		System.out.println("Введите строку для преобазоования: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ РґР»СЏ РїСЂРµРѕР±Р°Р·РѕРѕРІР°РЅРёСЏ: ");
 		myTaskThree.str = in.nextLine ();
 		in.close();
 		myTaskThree.convert();
 		myTaskThree.outputNewStr();
 	}
-
 }
