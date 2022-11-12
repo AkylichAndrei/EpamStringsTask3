@@ -1,26 +1,18 @@
 package strngsTasksOne;
-
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class TaskTwo {
 	String str;
 	char[] chArray;
 	int j;
 	void convert(){
-			//преобразовываем строку в массив
-			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+			chArray = str.toCharArray();
 			for( j = 0; j < chArray.length ; j++){
-			        //находим слово word
 				if(chArray[j] == 'w' && chArray[j + 1] == 'o' && chArray[j + 2] == 'r'
 						&& chArray[j + 3] == 'd' ){
-					//увеличиваем длинну массива
 					chArray = Arrays.copyOf(chArray,chArray.length + 2); 
-					//сдвигаем массив (на два увеличили, два раза сдвинули)
 					shift();
 					shift();
-					//меняем на 'letter'
 					chArray[j]='l';
 					chArray[j + 1]='e';
 					chArray[j + 2]='t';
@@ -29,7 +21,6 @@ public class TaskTwo {
 					chArray[j + 5]='r';
 			        }	
 			}
-			//запихиваем в строку
 			str = String.valueOf(chArray);
 	}
 	void shift() {
@@ -49,5 +40,4 @@ public class TaskTwo {
 		myTaskTwo.convert();
 		myTaskTwo.outputNewStr();
 	}
-
 }
