@@ -1,19 +1,13 @@
 package strngsTasksOne;
-
 import java.util.Scanner;
-
 public class TaskThree {
 	String str;
 	char[] chArray;
 	int j,counter;
 	void search(){
-			//преобразовываем строку в массив
-			 chArray = str.toCharArray();
-			//перебираем все элементы массива
+		chArray = str.toCharArray();
 			for( j = 0; j < chArray.length ; j++){
-			        //находим цифры
-				if(Character.isDigit(chArray[j])==true  ){
-					//чётчик
+				if(Character.isDigit(chArray[j])==true ){
 					counter++;
 			        }	
 			}
